@@ -27,7 +27,7 @@ export function toEngineInput(input: UiInput): EngineInput {
   return {
     goals: input.goals.map(g => ({ ...g })),               // add fields your Goal type needs
     tasks: input.tasks.map(t => ({
-      id: t.id, goalId: t.goalId,
+      id: t.id, title: t.title, goalId: t.goalId,
       weeklyTargetMinutes: t.weeklyTargetMinutes,
       priority: PRIORITY[t.priority],
       splittable: t.splittable,

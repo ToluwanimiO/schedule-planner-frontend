@@ -16,7 +16,7 @@ interface Props {
   children: ReactNode;
 }
 
-export function WizardLayout({ stepIndex, maxReached, onSelectStep, onReset, onBack, onNext, nextLabel = "Continue", nextIsGenerate, children }: Props) {
+export function WizardLayout({ stepIndex, maxReached, onSelectStep, onBack, onNext, nextLabel = "Continue", nextIsGenerate, children }: Props) {
   const total = WIZARD_STEPS.length;
   const pct = Math.round(((stepIndex + 1) / total) * 100);
   return (
