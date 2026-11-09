@@ -99,7 +99,11 @@ export function ScheduleStep({ status, error, generated, stale, onGenerate, onEd
 
           <div className="result-actions">
             <button type="button" className="secondary-button" onClick={onEditPlan}><ArrowLeft size={16} aria-hidden="true" /> Edit plan</button>
-            <button type="button" className={stale ? "primary-button" : "secondary-button"} onClick={onGenerate}><RefreshCw size={16} aria-hidden="true" /> Regenerate</button>
+            {stale && (
+              <button type="button" className="primary-button" onClick={onGenerate}>
+                <RefreshCw size={16} aria-hidden="true" /> Regenerate
+              </button>
+            )}
             <button type="button" className="primary-button" onClick={download} disabled={exporting || stale} aria-describedby="pdf-note">
               {exporting ? <Loader2 className="spin" size={16} aria-hidden="true" /> : <Download size={16} aria-hidden="true" />}
               {exporting ? "Creating PDF…" : "Download PDF"}
