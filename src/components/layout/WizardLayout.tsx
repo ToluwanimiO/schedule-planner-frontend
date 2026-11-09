@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 import { WIZARD_STEPS } from "../../domain/constants";
-import { AppHeader } from "./AppHeader";
 import { StepSidebar } from "./StepSidebar";
 
 interface Props {
@@ -22,7 +21,6 @@ export function WizardLayout({ stepIndex, maxReached, onSelectStep, onReset, onB
   const pct = Math.round(((stepIndex + 1) / total) * 100);
   return (
     <div className="app-shell">
-      <AppHeader onReset={onReset} />
       <main className="main-layout">
         <StepSidebar currentIndex={stepIndex} maxReached={maxReached} onSelect={onSelectStep} />
         <section className="workspace" aria-label={WIZARD_STEPS[stepIndex].label}>
